@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/lucide-react/lucide/main/icons/ship-wheel.svg" width="80" height="80" alt="Helm Logo" />
+  <img src="https://raw.githubusercontent.com/u-wz/helm/main/public/Helm.svg" width="80" height="80" alt="Helm Logo" />
   <h1>⛵ HELM</h1>
   <p><b>The North Star for Computer Science Students</b></p>
   <p><i>A premium, open-source guide for navigating the CS journey.</i></p>
@@ -30,8 +30,6 @@ We believe that learning to code shouldn't feel like a chore. By combining **Neo
 - **🛠️ Toolbox**: Essential developer software, VS Code extensions, and student benefit hacks.
 - **📄 Portfolio & CV**: Craft a professional presence that gets noticed by recruiters.
 - **📊 Local Progress Sync**: Check off tasks as you go. Your progress is saved locally in your browser.
-- **🌓 Vibe-Coded Design**: A high-contrast, neobrutalist interface that looks stunning in Dark Mode.
-
 ---
 
 ## 🎨 Visual Style: NeoBrutalism
@@ -74,7 +72,7 @@ pnpm install
 
 ### 3. Launch
 ```bash
-npm run dev
+pnpm run dev
 ```
 Navigate to [http://localhost:3000](http://localhost:3000) to see the magic.
 
