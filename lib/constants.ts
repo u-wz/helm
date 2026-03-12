@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export const SITE_NAME = "helm";
+export const SITE_NAME = "Helm";
 export const SITE_TAGLINE =
   "Everything Computer Science students need. In one place.";
 export const AUTHOR_NAME = ".uwz";
