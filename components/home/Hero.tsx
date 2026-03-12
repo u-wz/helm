@@ -67,7 +67,7 @@ export function Hero({ onFeelingLost }: HeroProps) {
             }`}
           >
             <SplitText
-              text="Everything you need to"
+              text="Everything you need  "
               delay={30}
               className="mr-3"
             />
