@@ -1,6 +1,6 @@
-import { Resend } from 'resend'
 import { NextResponse } from 'next/server'
-import DOMPurify from 'isomorphic-dompurify'
+import { Resend } from 'resend'
+import xss from 'xss'
 import validator from 'validator'
 
 // Initialize Resend lazily to prevent build crashes if API key is missing
@@ -79,9 +79,9 @@ export async function POST(request: Request) {
     }
 
     // Sanitize inputs (prevent XSS)
-    const sanitizedName = DOMPurify.sanitize(name.trim())
-    const sanitizedMessage = DOMPurify.sanitize(message.trim())
-    const sanitizedCategory = DOMPurify.sanitize(category)
+    const sanitizedName = xss(name.trim())
+    const sanitizedMessage = xss(message.trim())
+    const sanitizedCategory = xss(category)
 
     // Allowed survey categories whitelist
     const allowedCategories = ['roadmap', 'content', 'contribution', 'technical']
