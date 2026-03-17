@@ -1,13 +1,14 @@
-import { DialogContent, DialogTrigger } from "@/components/ui/NeoDialog";
 import { NeoButton } from "@/components/ui/NeoButton";
 import { SplitText } from "@/components/ui/SplitText";
 import { NeoStar } from "@/components/ui/NeoStar";
 import { ArrowRight, Map, HelpCircle } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Dialog } from "../ui/NeoDialog";
-import { FeelingLostModal } from "./FeelingLostModal";
 
-export function Hero() {
+interface HeroProps {
+  onFeelingLost: () => void;
+}
+
+export function Hero({ onFeelingLost }: HeroProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -67,19 +68,9 @@ export function Hero() {
           >
             <span className="block md:inline">
               <SplitText
-                text="Everything you need to "
+                text="Everything you need  "
                 delay={30}
                 className="md:mr-3"
-              />
-            </span>
-            <span className="relative inline-block mt-1 md:mt-0">
-              <span className="relative z-10">
-                <SplitText text="survive & thrive" delay={50} />
-              </span>
-              <span
-                className={`absolute bottom-1 left-0 h-2 md:h-3 bg-neo-yellow dark:bg-neo-yellow/30 -z-0 transition-all duration-700 delay-500 ${
-                  mounted ? "w-full" : "w-0"
-                }`}
               />
             </span>
             <span className="inline-flex flex-wrap items-center justify-center md:justify-start mt-1 md:mt-0">
@@ -141,24 +132,16 @@ export function Hero() {
             >
               Start Here
             </NeoButton>
-
-            <Dialog>
-              <DialogTrigger asChild>
-                <NeoButton
-                  size="lg"
-                  variant="secondary"
-                  icon={<HelpCircle size={20} />}
-                  iconPosition="right"
-                  className="text-base"
-                >
-                  I&apos;m feeling lost
-                </NeoButton>
-              </DialogTrigger>
-              <DialogContent>
-                <FeelingLostModal />
-
-              </DialogContent>
-            </Dialog>
+            <NeoButton
+              size="lg"
+              variant="secondary"
+              onClick={onFeelingLost}
+              icon={<HelpCircle size={20} />}
+              iconPosition="right"
+              className="text-base cursor-pointer"
+            >
+              I&apos;m feeling lost
+            </NeoButton>
           </div>
         </div>
       </div>
