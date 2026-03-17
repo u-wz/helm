@@ -497,7 +497,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## 🌐 Links
 
-- **Live Site**: [hells.vercel.app](https://hells.vercel.app) ← **Coming Soon**
+- **Live Site**: [hellm.vercel.app](https://hellm.vercel.app) ← **Domain Coming Soon**
 - **GitHub**: [github.com/u-wz/helm](https://github.com/u-wz/helm)
 - **Author**: [@uwz](https://github.com/u-wz)
 
