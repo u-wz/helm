@@ -123,7 +123,7 @@ export function FeedbackForm({ onSuccess }: FeedbackFormProps) {
                 onClick={() => setFormData({ ...formData, category: cat.value })}
                 disabled={isSubmitting}
                 className={`
-                  p-4 border-4 border-black dark:border-white text-left transition-all relative
+                  p-4 border-4 border-black dark:border-white text-left transition-all relative cursor-pointer
                   ${isSelected 
                     ? 'bg-black dark:bg-white text-white dark:text-black translate-x-1 translate-y-1 shadow-none' 
                     : 'bg-white dark:bg-black text-black dark:text-white shadow-[4px_4px_0px_0px_#0A0A0A] dark:shadow-[4px_4px_0px_0px_#F5F5F0] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0px_0px_#0A0A0A] dark:hover:shadow-[2px_2px_0px_0px_#F5F5F0]'

@@ -42,6 +42,7 @@ export function NeoAccordion({ items, exclusive = true, accent, className }: Neo
                 'font-bold font-heading text-left',
                 'hover:bg-black/5 dark:hover:bg-white/5',
                 'transition-colors duration-100',
+                'cursor-pointer',
                 isOpen && accent && 'border-l-4'
               )}
               style={isOpen && accent ? { borderLeftColor: accent } : undefined}

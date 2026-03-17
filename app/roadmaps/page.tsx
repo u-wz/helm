@@ -168,14 +168,14 @@ function TrackContent({ track }: { track: Track }) {
           <div className="flex gap-2">
             <button
               onClick={handleShare}
-              className="p-1.5 border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+              className="p-1.5 border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors cursor-pointer"
               title="Share progress"
             >
               <Share2 size={14} />
             </button>
             <button
               onClick={reset}
-              className="p-1.5 border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors"
+              className="p-1.5 border-2 border-black dark:border-white hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors cursor-pointer"
               title="Reset progress"
             >
               <RotateCcw size={14} />
@@ -203,7 +203,7 @@ function TrackContent({ track }: { track: Track }) {
               className={cn(
                 "w-full max-w-lg border-2 border-black dark:border-white p-4 font-heading font-bold text-left",
                 "hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-neo dark:hover:shadow-neo-white",
-                "transition-all duration-150 shadow-neo dark:shadow-neo-white",
+                "transition-all duration-150 shadow-neo dark:shadow-neo-white cursor-pointer",
               )}
               style={{
                 backgroundColor: track.accentColor + "20",
@@ -313,7 +313,7 @@ export default function RoadmapsPage() {
           <h1 className="font-heading font-black text-4xl md:text-5xl mb-2">
             Learning Roadmaps
           </h1>
-          <p className="font-body text-lg text-white/80">
+          <p className="font-body text-lg text-white">
             Pick your track. Follow the phases. Build real things.
           </p>
           <div className="mt-4 w-24 h-1 bg-neo-yellow" />
@@ -333,7 +333,7 @@ export default function RoadmapsPage() {
                 onClick={() => setActiveTrack(track.id)}
                 className={cn(
                   "border-2 border-black dark:border-white p-3 font-heading font-bold text-sm",
-                  "transition-all duration-150 flex flex-col items-center gap-1",
+                  "transition-all duration-150 flex flex-col items-center gap-1 cursor-pointer",
                   activeTrack === track.id
                     ? "translate-x-0.5 translate-y-0.5 shadow-none"
                     : "shadow-neo dark:shadow-neo-white hover:-translate-x-0.5 hover:-translate-y-0.5",
@@ -341,10 +341,14 @@ export default function RoadmapsPage() {
                 style={
                   activeTrack === track.id
                     ? {
-                      backgroundColor: track.accentColor,
-                      color: "#0A0A0A",
-                      borderColor: track.accentColor,
-                    }
+                        backgroundColor: track.accentColor,
+                        color: ["webdev", "security", "cloud", "data"].includes(
+                          track.id,
+                        )
+                          ? "white"
+                          : "#0A0A0A",
+                        borderColor: track.accentColor,
+                      }
                     : {}
                 }
               >

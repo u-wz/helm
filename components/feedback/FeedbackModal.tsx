@@ -10,7 +10,7 @@ export function FeedbackModal({ onClose }: FeedbackModalProps) {
   return (
     <>
       <div
-        className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm animate-in fade-in duration-300"
+        className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm animate-in fade-in duration-300 cursor-pointer"
         onClick={onClose}
       />
 
@@ -37,7 +37,7 @@ export function FeedbackModal({ onClose }: FeedbackModalProps) {
 
             <button
               onClick={onClose}
-              className="border-2 sm:border-4 border-black dark:border-white p-1 hover:bg-black hover:text-[#FFE500] dark:hover:bg-white dark:hover:text-black transition-all"
+              className="border-2 sm:border-4 border-black dark:border-white p-1 hover:bg-black hover:text-[#FFE500] dark:hover:bg-white dark:hover:text-black transition-all cursor-pointer"
               title="Close"
             >
               <X size={24} strokeWidth={3} />

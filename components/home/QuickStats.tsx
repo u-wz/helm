@@ -3,7 +3,7 @@ import { NeoCard } from "@/components/ui/NeoCard";
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { number: 70, suffix: "+", label: "Free Courses", accent: "#FFE500" },
+  { number: 70, suffix: "+", label: "Free Courses", accent: "#FFB300" },
   { number: 6, suffix: "", label: "Learning Tracks", accent: "#4361EE" },
   { number: 30, suffix: "+", label: "Companies", accent: "#FF6B35" },
   { number: 100, suffix: "%", label: "Free to Use", accent: "#06D6A0" },

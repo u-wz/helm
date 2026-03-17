@@ -125,7 +125,7 @@ export function YearFilter() {
               key={item.year}
               onClick={() => handleSelect(item.year)}
               className={cn(
-                "border-2 border-black dark:border-white p-4 font-heading font-bold",
+                "border-2 border-black dark:border-white p-4 font-heading font-bold cursor-pointer",
                 "transition-all duration-150",
                 selected === item.year
                   ? "translate-x-0.5 translate-y-0.5 shadow-none"
