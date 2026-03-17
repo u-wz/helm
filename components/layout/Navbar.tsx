@@ -156,7 +156,7 @@ export function Navbar() {
       >
         <button
           onClick={() => setDrawerOpen(false)}
-          className="absolute top-4 right-4 p-2 border-2 border-black dark:border-white bg-white dark:bg-neo-card cursor-pointer"
+          className="absolute top-4 right-4 p-2 border-2 border-black dark:border-white bg-white dark:bg-neo-card cursor-pointer text-black dark:text-white"
           aria-label="Close menu"
         >
           <X size={18} />
