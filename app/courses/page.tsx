@@ -158,7 +158,7 @@ Note: I am a CS student in Egypt and this course is critical for my career devel
           <h2 className="font-heading font-black text-xl">
             💸 Financial Aid Helper
           </h2>
-          <button onClick={onClose} className="border-2 border-black p-1.5">
+          <button onClick={onClose} className="border-2 border-black p-1.5 cursor-pointer">
             <X size={16} />
           </button>
         </div>
@@ -254,7 +254,7 @@ Note: I am a CS student in Egypt and this course is critical for my career devel
                 </NeoButton>
                 <button
                   onClick={() => setGenerated("")}
-                  className="font-body text-sm underline"
+                  className="font-body text-sm underline cursor-pointer"
                 >
                   Edit answers
                 </button>
@@ -329,7 +329,7 @@ function CourseCard({ course }: { course: Course }) {
               copy(`course-${course.id}`);
               show("Link copied! 🔗", "success");
             }}
-            className="flex-shrink-0 p-1.5 border-2 border-black dark:border-white opacity-0 group-hover:opacity-100 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
+            className="flex-shrink-0 p-1.5 border-2 border-black dark:border-white opacity-0 group-hover:opacity-100 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all cursor-pointer"
             title="Copy link"
           >
             <Link size={14} />
@@ -451,7 +451,7 @@ function FilterButton({
     <button
       onClick={onClick}
       className={cn(
-        "px-3 py-1.5 border-2 border-black dark:border-white font-body font-semibold text-xs uppercase tracking-wide",
+        "px-3 py-1.5 border-2 border-black dark:border-white font-body font-semibold text-xs uppercase tracking-wide cursor-pointer",
         "transition-all duration-100",
         active
           ? "translate-x-0.5 translate-y-0.5 shadow-none"
@@ -680,7 +680,7 @@ export default function CoursesPage() {
                 setSearch("");
                 setDebouncedSearch("");
               }}
-              className="font-body text-sm underline underline-offset-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white flex items-center gap-1"
+              className="font-body text-sm underline underline-offset-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white flex items-center gap-1 cursor-pointer"
             >
               <X size={14} /> Clear all filters
             </button>

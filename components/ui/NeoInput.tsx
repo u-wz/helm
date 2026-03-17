@@ -80,7 +80,7 @@ export function NeoInput({
       {clearable && value && (
         <button
           onClick={() => onChange('')}
-          className="absolute right-3 text-gray-400 hover:text-black dark:hover:text-white"
+          className="absolute right-3 text-gray-400 hover:text-black dark:hover:text-white cursor-pointer"
         >
           <X size={16} />
         </button>

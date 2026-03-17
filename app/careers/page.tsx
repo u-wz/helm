@@ -155,7 +155,7 @@ function FilterButton({
     <button
       onClick={onClick}
       className={cn(
-        "px-3 py-1.5 border-2 border-black dark:border-white font-body font-semibold text-xs uppercase tracking-wide",
+        "px-3 py-1.5 border-2 border-black dark:border-white font-body font-semibold text-xs uppercase tracking-wide cursor-pointer",
         "transition-all duration-100",
         active
           ? "translate-x-0.5 translate-y-0.5 shadow-none"
@@ -207,7 +207,7 @@ function CompanyCard({ company }: { company: Company }) {
             copy(`company-${company.id}`);
             show("Link copied! 🔗", "success");
           }}
-          className="flex-shrink-0 p-1.5 border-2 border-black dark:border-white opacity-60 hover:opacity-100 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
+          className="flex-shrink-0 p-1.5 border-2 border-black dark:border-white opacity-60 hover:opacity-100 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all cursor-pointer"
           title="Copy link"
         >
           <Link size={14} />

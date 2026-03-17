@@ -26,7 +26,7 @@ export function FeelingLostModal({ onClose }: FeelingLostModalProps) {
       <div className="w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-[var(--bg-primary)] border-2 border-black dark:border-white shadow-[8px_8px_0px_0px_#0A0A0A] dark:shadow-[8px_8px_0px_0px_#F5F5F0]">
         <div className="flex items-center justify-between p-6 border-b-2 border-black dark:border-white bg-neo-yellow dark:bg-neo-dark">
           <h2 className="font-heading font-black text-2xl">Let&apos;s figure this out 🧭</h2>
-          <button onClick={onClose} className="border-2 border-black dark:border-white p-1.5 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">
+          <button onClick={onClose} className="border-2 border-black dark:border-white p-1.5 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors cursor-pointer">
             <X size={18} />
           </button>
         </div>
@@ -44,7 +44,7 @@ export function FeelingLostModal({ onClose }: FeelingLostModalProps) {
                       'w-full text-left p-4 border-2 border-black dark:border-white',
                       'font-body font-medium text-base flex items-center gap-3',
                       'hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-neo dark:hover:shadow-neo-white',
-                      'transition-all duration-150'
+                      'transition-all duration-150 cursor-pointer'
                     )}
                   >
                     <span className="text-2xl">{opt.emoji}</span>
@@ -174,7 +174,7 @@ export function FeelingLostModal({ onClose }: FeelingLostModalProps) {
           {step !== 'question' && (
             <button
               onClick={() => setStep('question')}
-              className="mt-4 font-body text-sm underline underline-offset-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white"
+              className="mt-4 font-body text-sm underline underline-offset-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white cursor-pointer"
             >
               ← Back to options
             </button>

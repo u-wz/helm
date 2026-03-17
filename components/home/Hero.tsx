@@ -67,27 +67,45 @@ export function Hero({ onFeelingLost }: HeroProps) {
             }`}
           >
             <span className="block md:inline">
-            <SplitText
-              text="Everything you need  "
-              delay={30}
-              className="md:mr-3"
-            />
-          </span>
-            <span className="relative inline-block mt-1 md:mt-0">
-              <span className="relative z-10">
-                <SplitText text="survive & thrive" delay={50} />
-              </span>
-              <span
-                className={`absolute bottom-1 left-0 h-2 md:h-3 bg-neo-yellow dark:bg-neo-yellow/30 -z-0 transition-all duration-700 delay-500 ${
-                  mounted ? "w-full" : "w-0"
-                }`}
+              <SplitText
+                text="Everything you need  "
+                delay={30}
+                className="md:mr-3"
               />
+            </span>
+            <span className="inline-flex flex-wrap items-center justify-center md:justify-start mt-1 md:mt-0">
+              <SplitText text="to" delay={50} />
+              <span className="relative inline-block mr-[0.25em]">
+                <span className="relative z-10">
+                  <SplitText
+                    text="survive"
+                    delay={50}
+                    className="[&>span:last-child]:!mr-0"
+                  />
+                </span>
+                <span
+                  className={`absolute bottom-1 left-0 h-2 md:h-3 bg-neo-yellow dark:bg-neo-yellow/30 z-0 transition-all duration-700 delay-500 ${
+                    mounted ? "w-full" : "w-0"
+                  }`}
+                />
+              </span>
+              <SplitText text="&" delay={50} />
+              <span className="relative inline-block">
+                <span className="relative z-10">
+                  <SplitText
+                    text="thrive"
+                    delay={50}
+                    className="[&>span:last-child]:!mr-0"
+                  />
+                </span>
+                <span
+                  className={`absolute bottom-1 left-0 h-2 md:h-3 bg-neo-yellow dark:bg-neo-yellow/30 z-0 transition-all duration-700 delay-500 ${
+                    mounted ? "w-full" : "w-0"
+                  }`}
+                />
+              </span>
             </span>{" "}
-            <SplitText
-              text="in computer science"
-              delay={70}
-              className="mt-2"
-            />
+            <SplitText text="in computer science" delay={70} className="mt-2" />
           </h1>
 
           <p
@@ -110,7 +128,7 @@ export function Hero({ onFeelingLost }: HeroProps) {
               onClick={scrollToYearFilter}
               icon={<ArrowRight size={20} />}
               iconPosition="right"
-              className="text-base"
+              className="text-base cursor-pointer"
             >
               Start Here
             </NeoButton>
@@ -120,7 +138,7 @@ export function Hero({ onFeelingLost }: HeroProps) {
               onClick={onFeelingLost}
               icon={<HelpCircle size={20} />}
               iconPosition="right"
-              className="text-base"
+              className="text-base cursor-pointer"
             >
               I&apos;m feeling lost
             </NeoButton>

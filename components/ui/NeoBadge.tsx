@@ -35,7 +35,7 @@ export function NeoBadge({
     >
       {label}
       {removable && onRemove && (
-        <button onClick={onRemove} className="ml-1 hover:opacity-70">
+        <button onClick={onRemove} className="ml-1 hover:opacity-70 cursor-pointer">
           <X size={10} strokeWidth={3} />
         </button>
       )}

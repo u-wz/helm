@@ -8,7 +8,13 @@ import {
   AUTHOR_GITHUB,
   GITHUB_REPO,
 } from "@/lib/constants";
-import { Star, Share2, Heart, ArrowUpRight, MessageSquareCode } from "lucide-react";
+import {
+  Star,
+  Share2,
+  Heart,
+  ArrowUpRight,
+  MessageSquareCode,
+} from "lucide-react";
 import { useToast } from "@/components/ui/NeoToast";
 import { NeoStar } from "@/components/ui/NeoStar";
 import { FeedbackModal } from "@/components/feedback/FeedbackModal";
@@ -39,11 +45,11 @@ export function Footer() {
           {/* Brand Col */}
           <div className="space-y-4">
             <div className="mb-2">
-              <Image 
-                src="/Helm.svg" 
-                alt="Helm Logo" 
-                width={114} 
-                height={48} 
+              <Image
+                src="/Helm.svg"
+                alt="Helm Logo"
+                width={114}
+                height={48}
                 className="h-12 w-auto drop-shadow-[4px_4px_0px_#0A0A0A] dark:drop-shadow-[4px_4px_0px_#FF0F80]"
               />
             </div>
@@ -57,19 +63,19 @@ export function Footer() {
                 href={GITHUB_REPO}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-neo-yellow text-black border-2 border-black dark:border-white px-4 py-2 font-heading font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
+                className="flex items-center gap-2 bg-neo-yellow text-black border-2 border-black dark:border-white px-4 py-2 font-heading font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-pointer"
               >
                 <Star size={18} /> Star on GitHub
               </a>
               <button
                 onClick={handleShare}
-                className="flex items-center gap-2 bg-white text-black border-2 border-black dark:border-white px-4 py-2 font-heading font-bold shadow-[4px_4px_0px_0px_#0A0A0A] dark:shadow-[4px_4px_0px_0px_#F5F5F0] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
+                className="flex items-center gap-2 bg-white text-black border-2 border-black dark:border-white px-4 py-2 font-heading font-bold shadow-[4px_4px_0px_0px_#0A0A0A] dark:shadow-[4px_4px_0px_0px_#F5F5F0] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-pointer"
               >
                 <Share2 size={18} /> Share Site
               </button>
               <button
                 onClick={() => setShowFeedbackModal(true)}
-                className="flex items-center gap-2 bg-neo-pink text-white border-2 border-black dark:border-white px-4 py-2 font-heading font-bold shadow-[4px_4px_0px_0px_#0A0A0A] dark:shadow-[4px_4px_0px_0px_#F5F5F0] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
+                className="flex items-center gap-2 bg-neo-pink text-white border-2 border-black dark:border-white px-4 py-2 font-heading font-bold shadow-[4px_4px_0px_0px_#0A0A0A] dark:shadow-[4px_4px_0px_0px_#F5F5F0] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-pointer"
               >
                 <MessageSquareCode size={18} /> Feedback
               </button>
@@ -87,13 +93,15 @@ export function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="font-body font-bold text-base text-white dark:text-white hover:text-neo-yellow dark:hover:text-neo-green transition-colors flex items-center gap-1 group"
+                      className="font-body font-bold text-base text-white dark:text-white hover:text-neo-yellow dark:hover:text-neo-green transition-colors flex items-center gap-2 group cursor-pointer relative"
                     >
                       <ArrowUpRight
                         size={16}
-                        className="opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all"
+                        className="absolute -left-5 opacity-0 group-hover:opacity-100 group-hover:left-0 transition-all duration-300"
                       />
-                      {link.label}
+                      <span className="group-hover:translate-x-5 transition-transform duration-300">
+                        {link.label}
+                      </span>
                     </Link>
                   </li>
                 ))}
@@ -110,13 +118,15 @@ export function Footer() {
                     href={`${GITHUB_REPO}/issues/new`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-body font-bold text-base text-white dark:text-white hover:text-neo-yellow dark:hover:text-neo-green transition-colors flex items-center gap-1 group"
+                    className="font-body font-bold text-base text-white dark:text-white hover:text-neo-yellow dark:hover:text-neo-green transition-colors flex items-center gap-2 group cursor-pointer relative"
                   >
                     <ArrowUpRight
                       size={16}
-                      className="opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all"
+                      className="absolute -left-5 opacity-0 group-hover:opacity-100 group-hover:left-0 transition-all duration-300"
                     />
-                    Report an Issue
+                    <span className="group-hover:translate-x-5 transition-transform duration-300">
+                      Report an Issue
+                    </span>
                   </a>
                 </li>
                 <li>
@@ -124,13 +134,15 @@ export function Footer() {
                     href={`${GITHUB_REPO}/pulls`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-body font-bold text-base text-white dark:text-white hover:text-neo-yellow dark:hover:text-neo-green transition-colors flex items-center gap-1 group"
+                    className="font-body font-bold text-base text-white dark:text-white hover:text-neo-yellow dark:hover:text-neo-green transition-colors flex items-center gap-2 group cursor-pointer relative"
                   >
                     <ArrowUpRight
                       size={16}
-                      className="opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all"
+                      className="absolute -left-5 opacity-0 group-hover:opacity-100 group-hover:left-0 transition-all duration-300"
                     />
-                    Contribute
+                    <span className="group-hover:translate-x-5 transition-transform duration-300">
+                      Contribute
+                    </span>
                   </a>
                 </li>
                 <li>
@@ -138,13 +150,15 @@ export function Footer() {
                     href={AUTHOR_GITHUB}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-body font-bold text-base text-white dark:text-white hover:text-neo-yellow dark:hover:text-neo-green transition-colors flex items-center gap-1 group"
+                    className="font-body font-bold text-base text-white dark:text-white hover:text-neo-yellow dark:hover:text-neo-green transition-colors flex items-center gap-2 group cursor-pointer relative"
                   >
                     <ArrowUpRight
                       size={16}
-                      className="opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all"
+                      className="absolute -left-5 opacity-0 group-hover:opacity-100 group-hover:left-0 transition-all duration-300"
                     />
-                    Creator
+                    <span className="group-hover:translate-x-5 transition-transform duration-300">
+                      Creator
+                    </span>
                   </a>
                 </li>
               </ul>
@@ -163,7 +177,7 @@ export function Footer() {
               href={AUTHOR_GITHUB}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline hover:no-underline underline-offset-4"
+              className="underline hover:no-underline underline-offset-4 cursor-pointer"
             >
               {AUTHOR_NAME}
             </a>
@@ -174,7 +188,9 @@ export function Footer() {
           </div>
         </div>
       </div>
-      {showFeedbackModal && <FeedbackModal onClose={() => setShowFeedbackModal(false)} />}
+      {showFeedbackModal && (
+        <FeedbackModal onClose={() => setShowFeedbackModal(false)} />
+      )}
     </footer>
   );
 }

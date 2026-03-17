@@ -105,7 +105,7 @@ function ToolCard({ tool }: { tool: (typeof tools)[0] }) {
             copy(`tool-${tool.id}`);
             show("Link copied! 🔗", "success");
           }}
-          className="flex-shrink-0 p-1.5 border-2 border-black dark:border-white opacity-60 hover:opacity-100 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
+          className="flex-shrink-0 p-1.5 border-2 border-black dark:border-white opacity-60 hover:opacity-100 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all cursor-pointer"
           title="Copy link"
         >
           <Link size={14} />
@@ -175,7 +175,7 @@ export default function ToolsPage() {
           <h1 className="font-heading font-black text-4xl md:text-5xl mb-2 text-white">
             Developer Tools &amp; Free Perks
           </h1>
-          <p className="font-body text-lg text-white/80">
+          <p className="font-body text-lg text-white">
             Everything you need as a developer. Most of it free. All of it
             useful.
           </p>
@@ -195,7 +195,7 @@ export default function ToolsPage() {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={cn(
-                  "px-3 py-1.5 border-2 border-black dark:border-white font-body font-semibold text-xs uppercase tracking-wide transition-all duration-100",
+                  "px-3 py-1.5 border-2 border-black dark:border-white font-body font-semibold text-xs uppercase tracking-wide transition-all duration-100 cursor-pointer",
                   activeCategory === cat
                     ? "translate-x-0.5 translate-y-0.5 shadow-none"
                     : "shadow-neo dark:shadow-neo-white hover:-translate-x-0.5 hover:-translate-y-0.5",

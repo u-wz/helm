@@ -9,11 +9,11 @@ import { useTheme } from "./ThemeProvider";
 import Image from "next/image";
 
 function getNavColor(pathname: string) {
-  if (pathname.startsWith("/roadmaps")) return "bg-[#4361EE]"; // neo-blue
-  if (pathname.startsWith("/courses")) return "bg-[#06D6A0]"; // neo-green
-  if (pathname.startsWith("/careers")) return "bg-[#FF6B35]"; // neo-orange
-  if (pathname.startsWith("/tools")) return "bg-[#9B5DE5]"; // neo-purple
-  if (pathname.startsWith("/cv-projects")) return "bg-[#FF0F80]"; // neo-pink
+  if (pathname.startsWith("/roadmaps")) return "bg-[#4361EE] text-white"; // neo-blue
+  if (pathname.startsWith("/courses")) return "bg-[#06D6A0] text-black"; // neo-green
+  if (pathname.startsWith("/careers")) return "bg-[#FF6B35] text-black"; // neo-orange
+  if (pathname.startsWith("/tools")) return "bg-[#9B5DE5] text-black"; // neo-purple
+  if (pathname.startsWith("/cv-projects")) return "bg-[#FF0F80] text-black"; // neo-pink
   return "bg-neo-amber dark:bg-neo-dark"; // Default for home page
 }
 
@@ -24,12 +24,12 @@ function ThemeToggle() {
       onClick={toggle}
       aria-label="Toggle theme"
       className={cn(
-        "w-9 h-9 border-2 border-black dark:border-white",
+        "w-9 h-9 border-2  border-black dark:border-white",
         "flex items-center justify-center",
         "hover:-translate-x-0.5 hover:-translate-y-0.5",
         "hover:shadow-neo dark:hover:shadow-neo-white",
-        "transition-all duration-150 bg-white dark:bg-neo-card",
-        "flex-shrink-0",
+        "transition-all duration-150 bg-white dark:bg-neo-card text-black dark:text-white",
+        "flex-shrink-0 cursor-pointer",
       )}
     >
       {theme === "light" ? <Moon size={16} /> : <Sun size={16} />}
@@ -90,7 +90,7 @@ export function Navbar() {
           <div className="flex items-center justify-between h-14">
             <Link
               href="/"
-              className="flex items-center gap-2 group"
+              className="flex items-center gap-2 group cursor-pointer"
             >
               <Image
                 src="/Helm.svg"
@@ -108,10 +108,10 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "px-3 py-1.5 font-body font-medium text-sm text-black dark:text-white",
-                    "hover:underline underline-offset-4 transition-all",
+                    "px-3 py-1.5 font-body font-medium text-sm transition-all cursor-pointer",
+                    "hover:underline underline-offset-4",
                     pathname === link.href &&
-                    "font-bold underline underline-offset-4",
+                      "font-bold underline underline-offset-4",
                   )}
                 >
                   {link.label}
@@ -127,7 +127,7 @@ export function Navbar() {
                   "md:hidden w-9 h-9 border-2 border-black dark:border-white",
                   "flex items-center justify-center bg-white dark:bg-neo-card",
                   "hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-neo dark:hover:shadow-neo-white",
-                  "transition-all duration-150",
+                  "transition-all duration-150 cursor-pointer text-black dark:text-white",
                 )}
                 aria-label="Open menu"
               >
@@ -140,7 +140,7 @@ export function Navbar() {
 
       {drawerOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          className="fixed inset-0 bg-black/50 z-40 md:hidden cursor-pointer"
           onClick={() => setDrawerOpen(false)}
         />
       )}
@@ -156,7 +156,7 @@ export function Navbar() {
       >
         <button
           onClick={() => setDrawerOpen(false)}
-          className="absolute top-4 right-4 p-2 border-2 border-black dark:border-white bg-white dark:bg-neo-card"
+          className="absolute top-4 right-4 p-2 border-2 border-black dark:border-white bg-white dark:bg-neo-card cursor-pointer"
           aria-label="Close menu"
         >
           <X size={18} />
@@ -165,7 +165,7 @@ export function Navbar() {
         <div className="pt-16 px-6 flex flex-col">
           <Link
             href="/"
-            className="flex items-center gap-2 pb-4 mb-2 group"
+            className="flex items-center gap-2 pb-4 mb-2 group cursor-pointer"
           >
             <Image
               src="/Helm.svg"
@@ -181,7 +181,7 @@ export function Navbar() {
               href={link.href}
               className={cn(
                 "py-4 font-heading font-bold text-lg border-b-2 border-black dark:border-white",
-                "hover:pl-2 transition-all duration-150",
+                "hover:pl-2 transition-all duration-150 cursor-pointer",
                 pathname === link.href && "pl-2 text-black dark:text-white",
               )}
             >

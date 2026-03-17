@@ -40,7 +40,7 @@ export function NeoButton({
     'transition-all duration-100',
     sizeClasses[size],
     variantClasses[variant],
-    !disabled && 'hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-neo dark:hover:shadow-neo-white',
+    !disabled && 'cursor-pointer hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-neo dark:hover:shadow-neo-white',
     !disabled && 'active:translate-x-0.5 active:translate-y-0.5 active:shadow-none',
     disabled && 'opacity-50 cursor-not-allowed pointer-events-none',
     className
