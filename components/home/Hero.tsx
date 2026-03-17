@@ -67,7 +67,7 @@ export function Hero() {
           >
             <span className="block md:inline">
               <SplitText
-                text="Everything you need  "
+                text="Everything you need to "
                 delay={30}
                 className="md:mr-3"
               />
