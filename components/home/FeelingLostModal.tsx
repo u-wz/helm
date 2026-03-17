@@ -4,12 +4,9 @@ import { X, ArrowRight, ExternalLink } from 'lucide-react'
 import { NeoButton } from '@/components/ui/NeoButton'
 import { NeoCard } from '@/components/ui/NeoCard'
 import { cn } from '@/lib/utils'
+import { DialogClose, DialogHeader, DialogTitle } from '../ui/NeoDialog'
 
 type Step = 'question' | 'brand-new' | 'know-basics' | 'cant-find-job' | 'scared'
-
-interface FeelingLostModalProps {
-  onClose: () => void
-}
 
 const options = [
   { id: 'brand-new', label: "I'm brand new to programming", emoji: '👶' },
@@ -18,18 +15,18 @@ const options = [
   { id: 'scared', label: "I'm about to graduate and I'm scared", emoji: '😰' },
 ]
 
-export function FeelingLostModal({ onClose }: FeelingLostModalProps) {
+export function FeelingLostModal() {
   const [step, setStep] = useState<Step>('question')
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60">
       <div className="w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-[var(--bg-primary)] border-2 border-black dark:border-white shadow-[8px_8px_0px_0px_#0A0A0A] dark:shadow-[8px_8px_0px_0px_#F5F5F0]">
-        <div className="flex items-center justify-between p-6 border-b-2 border-black dark:border-white bg-neo-yellow dark:bg-neo-dark">
-          <h2 className="font-heading font-black text-2xl">Let&apos;s figure this out 🧭</h2>
-          <button onClick={onClose} className="border-2 border-black dark:border-white p-1.5 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">
+        <DialogHeader className="flex flex-row items-center justify-between p-6 border-b-2 border-black dark:border-white bg-neo-yellow dark:bg-neo-dark">
+          <DialogTitle className="font-heading font-black text-2xl">Let&apos;s figure this out 🧭</DialogTitle>
+          <DialogClose className="border-2 border-black dark:border-white p-1.5 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">
             <X size={18} />
-          </button>
-        </div>
+          </DialogClose>
+        </DialogHeader>
 
         <div className="p-6">
           {step === 'question' && (

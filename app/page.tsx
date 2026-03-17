@@ -1,23 +1,20 @@
 "use client";
-import { useState, useEffect } from "react";
 import { Hero } from "@/components/home/Hero";
 import { QuickStats } from "@/components/home/QuickStats";
 import { YearFilter } from "@/components/home/YearFilter";
 import { SiteOverview } from "@/components/home/SiteOverview";
-import { FeelingLostModal } from "@/components/home/FeelingLostModal";
 import { NeoAccordion } from "@/components/ui/NeoAccordion";
 import { faqs } from "@/data/faqs";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { ReviewsSection } from "@/components/home/Reviewssection";
 
 export default function Home() {
-  const [showLostModal, setShowLostModal] = useState(false);
   const homeFaqs = faqs.filter((f) => f.page === "home");
   useScrollReveal();
 
   return (
     <div className="min-h-screen bg-[var(--bg-primary)]">
-      <Hero onFeelingLost={() => setShowLostModal(true)} />
+      <Hero />
 
       <div className="reveal">
         <QuickStats />
@@ -60,10 +57,6 @@ export default function Home() {
         </div>
       </section>
       <ReviewsSection />
-
-      {showLostModal && (
-        <FeelingLostModal onClose={() => setShowLostModal(false)} />
-      )}
     </div>
   );
 }
