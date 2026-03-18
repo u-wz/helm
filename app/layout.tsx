@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
 
   title: {
-    default: `${SITE_NAME} — حلم | Free CS Guide for Egyptian Students`,
-    template: `%s | ${SITE_NAME}`,
+    default: `${SITE_NAME}`,
+    template: `${SITE_NAME} | %s `,
   },
 
   description: SITE_DESCRIPTION,
