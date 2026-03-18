@@ -183,6 +183,20 @@ export const tools: Tool[] = [
     recommendedFor: "Developers who want agentic AI assistance",
   },
   {
+    id: "antigravity",
+    name: "Antigravity",
+    description:
+      "Google's agentic IDE and development platform that evolves the coding environment with autonomous agents across the editor, terminal, and browser.",
+    url: "https://antigravity.google/",
+    category: "editor",
+    isFree: true,
+    hasFreeStudentPlan: false,
+    tags: ["editor", "ai", "google", "agentic", "ide"],
+    platforms: ["Windows", "Mac", "Linux"],
+    recommendedFor: "Developers wanting the next generation of AI-assisted engineering",
+    isHighlighted: true,
+  },
+  {
     id: "visualstudio",
     name: "Visual Studio",
     description:
@@ -783,6 +797,20 @@ export const tools: Tool[] = [
     ],
     platforms: ["Web"],
     recommendedFor: "Mobile apps and MVPs that need a quick backend",
+  },
+  {
+    id: "convex",
+    name: "Convex",
+    description:
+      "A reactive backend-as-a-service with a real-time database, serverless functions, and fully synced state across all users.",
+    url: "https://www.convex.dev/",
+    category: "cloud",
+    isFree: true,
+    hasFreeStudentPlan: false,
+    tags: ["database", "backend", "realtime", "typescript", "serverless"],
+    platforms: ["Web"],
+    recommendedFor: "Full-stack developers and Next.js applications",
+    isHighlighted: true,
   },
   {
     id: "aws-free",
