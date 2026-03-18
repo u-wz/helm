@@ -436,31 +436,41 @@ function CourseCard({ course }: { course: Course }) {
   );
 }
 
-function FilterButton({
+function FilterSelect({
   label,
-  active,
-  onClick,
-  accent = "#06D6A0",
+  value,
+  options,
+  onChange,
 }: {
   label: string;
-  active: boolean;
-  onClick: () => void;
-  accent?: string;
+  value: string;
+  options: { label: string; value: string }[];
+  onChange: (value: string) => void;
 }) {
   return (
-    <button
-      onClick={onClick}
-      className={cn(
-        "px-3 py-1.5 border-2 border-black dark:border-white font-body font-semibold text-xs uppercase tracking-wide cursor-pointer",
-        "transition-all duration-100",
-        active
-          ? "translate-x-0.5 translate-y-0.5 shadow-none"
-          : "shadow-neo dark:shadow-neo-white hover:-translate-x-0.5 hover:-translate-y-0.5",
-      )}
-      style={active ? { backgroundColor: accent, color: "#0A0A0A" } : {}}
-    >
-      {label}
-    </button>
+    <div className="w-full">
+      <p className="font-body text-xs uppercase tracking-wide font-semibold text-gray-500 dark:text-gray-400 mb-2">
+        {label}
+      </p>
+      <div className="relative">
+        <select
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          className="w-full appearance-none px-3 py-2 border-2 border-black dark:border-white font-body font-semibold text-sm transition-all duration-100 shadow-neo dark:shadow-neo-white focus:outline-none focus:translate-x-0.5 focus:translate-y-0.5 focus:shadow-none bg-[#FFFFF0] dark:bg-[#141414] text-black dark:text-white cursor-pointer"
+        >
+          {options.map((opt) => (
+            <option key={opt.value} value={opt.value}>
+              {opt.label}
+            </option>
+          ))}
+        </select>
+        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-black dark:text-white">
+          <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+          </svg>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -554,117 +564,60 @@ export default function CoursesPage() {
         />
 
         {/* Filters */}
-        <div className="space-y-3">
-          <div>
-            <p className="font-body text-xs uppercase tracking-wide font-semibold text-gray-500 dark:text-gray-400 mb-2">
-              Track
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {TRACK_OPTIONS.map((opt) => (
-                <FilterButton
-                  key={opt.value}
-                  label={opt.label}
-                  active={filters.tracks.includes(opt.value)}
-                  onClick={() => toggleTrack(opt.value)}
-                />
-              ))}
-            </div>
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <FilterSelect
+            label="Track"
+            value={filters.tracks.length === 0 ? "all" : filters.tracks[0]}
+            onChange={(val) => setFilters((prev) => ({ ...prev, tracks: val === "all" ? [] : [val as TrackName] }))}
+            options={[{ value: "all", label: "All Tracks" }, ...TRACK_OPTIONS]}
+          />
 
-          <div className="flex flex-wrap gap-4">
-            <div>
-              <p className="font-body text-xs uppercase tracking-wide font-semibold text-gray-500 dark:text-gray-400 mb-2">
-                Type
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {(["all", "free", "paid", "audit_free"] as const).map((t) => (
-                  <FilterButton
-                    key={t}
-                    label={
-                      t === "all"
-                        ? "All"
-                        : t === "audit_free"
-                          ? "Audit Free"
-                          : t.charAt(0).toUpperCase() + t.slice(1)
-                    }
-                    active={filters.type === t}
-                    onClick={() => setFilters((prev) => ({ ...prev, type: t }))}
-                  />
-                ))}
-              </div>
-            </div>
+          <FilterSelect
+            label="Type"
+            value={filters.type}
+            onChange={(val) => setFilters((prev) => ({ ...prev, type: val as any }))}
+            options={[
+              { value: "all", label: "All Types" },
+              { value: "free", label: "Free" },
+              { value: "paid", label: "Paid" },
+              { value: "audit_free", label: "Audit Free" }
+            ]}
+          />
 
-            <div>
-              <p className="font-body text-xs uppercase tracking-wide font-semibold text-gray-500 dark:text-gray-400 mb-2">
-                Format
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {(["all", "youtube", "website", "book"] as const).map((f) => (
-                  <FilterButton
-                    key={f}
-                    label={
-                      f === "all"
-                        ? "All"
-                        : f.charAt(0).toUpperCase() + f.slice(1)
-                    }
-                    active={filters.format === f}
-                    onClick={() =>
-                      setFilters((prev) => ({ ...prev, format: f }))
-                    }
-                  />
-                ))}
-              </div>
-            </div>
+          <FilterSelect
+            label="Format"
+            value={filters.format}
+            onChange={(val) => setFilters((prev) => ({ ...prev, format: val as any }))}
+            options={[
+              { value: "all", label: "All Formats" },
+              { value: "youtube", label: "YouTube" },
+              { value: "website", label: "Website" },
+              { value: "book", label: "Book" }
+            ]}
+          />
 
-            <div>
-              <p className="font-body text-xs uppercase tracking-wide font-semibold text-gray-500 dark:text-gray-400 mb-2">
-                Language
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {(["all", "english", "arabic", "bilingual"] as const).map(
-                  (l) => (
-                    <FilterButton
-                      key={l}
-                      label={l.charAt(0).toUpperCase() + l.slice(1)}
-                      active={filters.contentLanguage === l}
-                      onClick={() =>
-                        setFilters((prev) => ({ ...prev, contentLanguage: l }))
-                      }
-                    />
-                  ),
-                )}
-              </div>
-            </div>
+          <FilterSelect
+            label="Language"
+            value={filters.contentLanguage}
+            onChange={(val) => setFilters((prev) => ({ ...prev, contentLanguage: val as any }))}
+            options={[
+              { value: "all", label: "All Languages" },
+              { value: "english", label: "English" },
+              { value: "arabic", label: "Arabic" },
+              { value: "bilingual", label: "Bilingual" }
+            ]}
+          />
 
-            <div>
-              <p className="font-body text-xs uppercase tracking-wide font-semibold text-gray-500 dark:text-gray-400 mb-2">
-                Certificate
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <FilterButton
-                  label="Any"
-                  active={filters.hasCertificate === null}
-                  onClick={() =>
-                    setFilters((prev) => ({ ...prev, hasCertificate: null }))
-                  }
-                />
-                <FilterButton
-                  label="With Cert"
-                  active={filters.hasCertificate === true}
-                  onClick={() =>
-                    setFilters((prev) => ({ ...prev, hasCertificate: true }))
-                  }
-                />
-                <FilterButton
-                  label="No Cert"
-                  active={filters.hasCertificate === false}
-                  onClick={() =>
-                    setFilters((prev) => ({ ...prev, hasCertificate: false }))
-                  }
-                />
-              </div>
-            </div>
-          </div>
+          <FilterSelect
+            label="Certificate"
+            value={filters.hasCertificate === null ? "all" : filters.hasCertificate.toString()}
+            onChange={(val) => setFilters((prev) => ({ ...prev, hasCertificate: val === "all" ? null : val === "true" }))}
+            options={[
+              { value: "all", label: "Any" },
+              { value: "true", label: "With Cert" },
+              { value: "false", label: "No Cert" }
+            ]}
+          />
         </div>
 
         {/* Results bar */}

@@ -179,26 +179,24 @@ export default function ToolsPage() {
           <p className="font-body text-xs uppercase tracking-wide font-semibold text-gray-500 dark:text-gray-400 mb-3">
             Filter by Category
           </p>
-          <div className="flex flex-wrap gap-2">
-            {(["all", ...CATEGORY_ORDER] as const).map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={cn(
-                  "px-3 py-1.5 border-2 border-black dark:border-white font-body font-semibold text-xs uppercase tracking-wide transition-all duration-100 cursor-pointer",
-                  activeCategory === cat
-                    ? "translate-x-0.5 translate-y-0.5 shadow-none"
-                    : "shadow-neo dark:shadow-neo-white hover:-translate-x-0.5 hover:-translate-y-0.5",
-                )}
-                style={
-                  activeCategory === cat
-                    ? { backgroundColor: ACCENT, color: "#fff" }
-                    : {}
-                }
-              >
-                {cat === "all" ? "All" : CATEGORY_LABELS[cat]}
-              </button>
-            ))}
+          <div className="relative max-w-xs md:max-w-sm">
+            <select
+              value={activeCategory}
+              onChange={(e) => setActiveCategory(e.target.value as ToolCategory | "all")}
+              className="w-full appearance-none px-4 py-3 border-2 border-black dark:border-white font-body font-semibold text-sm transition-all duration-100 shadow-neo dark:shadow-neo-white focus:outline-none focus:translate-x-0.5 focus:translate-y-0.5 focus:shadow-none bg-[#FFFFF0] dark:bg-[#141414] text-black dark:text-white cursor-pointer"
+            >
+              <option value="all">All Categories</option>
+              {CATEGORY_ORDER.map((cat) => (
+                <option key={cat} value={cat}>
+                  {CATEGORY_LABELS[cat]}
+                </option>
+              ))}
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-black dark:text-white">
+              <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+              </svg>
+            </div>
           </div>
         </div>
 
