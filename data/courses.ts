@@ -227,25 +227,6 @@ export const courses: Course[] = [
     tags: ["overview", "big picture", "orientation", "short"],
     lastVerified: "2026-01",
   },
-  {
-    id: "ahmed_sami_algo",
-    title: "Data Structures & Algorithms in Arabic",
-    platform: "YouTube",
-    instructor: "Ahmed Sami",
-    url: "https://www.youtube.com/@AhmedSami",
-    type: "free",
-    format: "youtube",
-    hasCertificate: false,
-    hasArabic: true,
-    contentLanguage: "arabic",
-    tracks: ["cs_fundamentals"],
-    level: "intermediate",
-    rating: 5,
-    description:
-      "شرح Data Structures وAlgorithms بالعربي بطريقة واضحة ومنظمة. من أحسن المحتوى العربي في الـ DSA.",
-    tags: ["dsa", "algorithms", "arabic", "data structures"],
-    lastVerified: "2026-01",
-  },
 
   // ─────────────────────────────────────────
   // WEB DEVELOPMENT

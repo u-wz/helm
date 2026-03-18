@@ -2033,7 +2033,7 @@ export const tools: Tool[] = [
     name: "InstaPay Egypt",
     description:
       "Egypt's instant domestic payment system. Free transfers between Egyptian banks. Used for local payments.",
-    url: "https://instapay.eg/",
+    url: "https://www.instapay.eg/",
     category: "payment",
     isFree: true,
     hasFreeStudentPlan: false,
@@ -2046,7 +2046,7 @@ export const tools: Tool[] = [
     name: "Fawry",
     description:
       "Egypt's most popular payment network. Used to pay for Vodafone, internet bills, and online services at 200,000+ locations. The payment backbone of Egypt.",
-    url: "https://fawry.com/",
+    url: "https://www.fawry.com/",
     category: "payment",
     isFree: true,
     hasFreeStudentPlan: false,
@@ -2059,7 +2059,7 @@ export const tools: Tool[] = [
     name: "Vodafone Cash",
     description:
       "Mobile wallet for Egyptian Vodafone subscribers. Send money, receive payments, pay bills. Useful for receiving small local freelance payments from Egyptian clients.",
-    url: "https://vodafone.com.eg/en/personal/vodafone-cash/",
+    url: "https://web.vodafone.com.eg/ar/vodafone-cash",
     category: "payment",
     isFree: true,
     hasFreeStudentPlan: false,
@@ -2072,7 +2072,7 @@ export const tools: Tool[] = [
     name: "Orange Money Egypt",
     description:
       "Orange Egypt's mobile wallet. Similar to Vodafone Cash — send money, pay bills, receive local payments. Pairs well with Orange internet packages.",
-    url: "https://www.orange.eg/",
+    url: "https://www.orange.eg/en/services/orange-financial-services",
     category: "payment",
     isFree: true,
     hasFreeStudentPlan: false,
