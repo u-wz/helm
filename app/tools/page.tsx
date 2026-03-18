@@ -10,20 +10,10 @@ import { NeoStar } from "@/components/ui/NeoStar";
 import { useCopyLink } from "@/hooks/useCopyLink";
 import { useToast } from "@/components/ui/NeoToast";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import {
-  ExternalLink,
-  Link,
-  GraduationCap,
-  Monitor,
-  Cloud,
-  Palette,
-  Clock,
-  Shield,
-  Bot,
-  Wallet,
-} from "lucide-react";
+import { ExternalLink, Link } from "lucide-react";
 import { cn } from "@/lib/utils";
-
+import Image from "next/image";
+import itiLogo from "@/public/iti.svg";
 const ACCENT = "#9B5DE5";
 const CATEGORY_ORDER: ToolCategory[] = [
   "student_pack",
@@ -234,7 +224,13 @@ export default function ToolsPage() {
         <section className="reveal">
           <NeoCard className="p-6 md:p-8" accent="#FF6B35">
             <h2 className="font-heading font-black text-xl md:text-2xl mb-3 flex items-center gap-2">
-              <GraduationCap className="text-[var(--text-primary)]" size={28} />{" "}
+              <Image
+                src={itiLogo}
+                alt="ITI"
+                className="text-[var(--text-primary)]"
+                width={90}
+                height={90}
+              />{" "}
               ITI — The Most Valuable Free Program in Egypt
             </h2>
             <p className="font-body text-base mb-4">
