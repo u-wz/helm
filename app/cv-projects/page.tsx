@@ -20,7 +20,7 @@ import {
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { cn } from "@/lib/utils";
 
-const ACCENT = "#FF0F80";
+const ACCENT = "#85003E";
 
 // CV tips data
 const cvSections = [

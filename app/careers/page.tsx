@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const ACCENT = "#FF6B35";
+const ACCENT = "#FFBBA2";
 
 const hiringSteps = [
   {
