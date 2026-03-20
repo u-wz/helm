@@ -14,7 +14,7 @@ import { ExternalLink, Link } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import itiLogo from "@/public/iti.svg";
-const ACCENT = "#9B5DE5";
+const ACCENT = "#5300B8";
 const CATEGORY_ORDER: ToolCategory[] = [
   "student_pack",
   "editor",

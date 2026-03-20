@@ -9,11 +9,11 @@ import { useTheme } from "./ThemeProvider";
 import Image from "next/image";
 
 function getNavColor(pathname: string) {
-  if (pathname.startsWith("/roadmaps")) return "bg-[#4361EE] text-white"; // neo-blue
+  if (pathname.startsWith("/roadmaps")) return "bg-[#102EB1] text-white"; // neo-blue
   if (pathname.startsWith("/courses")) return "bg-[#06D6A0] text-black"; // neo-green
-  if (pathname.startsWith("/careers")) return "bg-[#FF6B35] text-black"; // neo-orange
-  if (pathname.startsWith("/tools")) return "bg-[#9B5DE5] text-black"; // neo-purple
-  if (pathname.startsWith("/cv-projects")) return "bg-[#FF0F80] text-black"; // neo-pink
+  if (pathname.startsWith("/careers")) return "bg-[#FFBBA2] text-black"; // neo-orange
+  if (pathname.startsWith("/tools")) return "bg-[#5300B8] text-white"; // neo-purple
+  if (pathname.startsWith("/cv-projects")) return "bg-[#85003E] text-white"; // neo-pink
   return "bg-neo-amber dark:bg-neo-dark"; // Default for home page
 }
 
@@ -82,7 +82,7 @@ export function Navbar() {
         className={cn(
           "sticky top-0 z-50 w-full transition-all duration-300",
           getNavColor(pathname),
-          "border-b-2 border-black dark:border-white",
+          "border-b-2 border-currentColor",
           isVisible ? "translate-y-0" : "-translate-y-full",
         )}
       >

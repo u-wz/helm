@@ -55,7 +55,7 @@ export const tracks: Track[] = [
     icon: React.createElement(Globe),
     description:
       "Build modern web applications with HTML, CSS, JavaScript and React. Create responsive, accessible user interfaces.",
-    accentColor: "#4361EE",
+    accentColor: "#102EB1",
     egyptianMarketNote:
       "Frontend development is the most in-demand track in Egypt. React + TypeScript dominate. Companies like Paymob, Halan, Instabug, and virtually all Egyptian startups hire frontend developers. Remote opportunities are excellent.",
     faqs: [
@@ -352,7 +352,7 @@ export const tracks: Track[] = [
     icon: React.createElement(Cpu),
     description:
       "Learn machine learning algorithms, deep learning, and build AI-powered applications.",
-    accentColor: "#9B5DE5",
+    accentColor: "#CDA3FF",
     egyptianMarketNote:
       "AI/ML is rapidly growing in Egypt. Companies like Halan, Breadfast, and MaxAB have ML teams. International remote opportunities are abundant due to high global demand for AI skills.",
     faqs: [
@@ -624,7 +624,7 @@ export const tracks: Track[] = [
     icon: React.createElement(ShieldAlert),
     description:
       "Learn offensive and defensive security, penetration testing, and ethical hacking.",
-    accentColor: "#FF6B35",
+    accentColor: "#FFB300",
     egyptianMarketNote:
       "Cybersecurity is growing rapidly in Egypt driven by banking, telecom, and government requirements. Banks like NBE and CIB have security teams. Less competition than web development.",
     faqs: [
@@ -1323,7 +1323,7 @@ export const tracks: Track[] = [
     icon: React.createElement(Database),
     description:
       "Build data pipelines, warehouses, and analytics infrastructure at scale.",
-    accentColor: "#FF0F80",
+    accentColor: "#FF94C6",
     egyptianMarketNote:
       "Data engineering is growing in Egypt via fintech, e-commerce, and telecom. MaxAB, Breadfast, Halan have data teams. Strong remote opportunities globally. Less competitive than data science.",
     faqs: [
